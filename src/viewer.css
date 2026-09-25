@@ -1,0 +1,119 @@
+:root {
+  color-scheme: light dark;
+  --ink: #1c1915;
+  --muted: #5e584f;
+  --line: #e4dccf;
+  --paper: #f7f3eb;
+  --card: #fffdf8;
+  --blue: #0f3d75;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f4efe6;
+    --muted: #c9bfb0;
+    --line: #3a342c;
+    --paper: #16130f;
+    --card: #221e19;
+    --blue: #8eb6ee;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 15px/1.45 "Segoe UI", sans-serif;
+}
+
+header, .toolbar, #list, #more {
+  width: min(1100px, calc(100% - 32px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: end;
+  padding-top: 28px;
+}
+
+h1 { margin: 0 0 4px; font-size: 28px; letter-spacing: -0.03em; }
+
+header p { margin: 0; color: var(--muted); }
+
+.actions, .toolbar { display: flex; gap: 8px; }
+
+.toolbar { margin: 16px auto; }
+
+input[type="search"] {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: inherit;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font: inherit;
+}
+
+button {
+  border: 1px solid var(--blue);
+  background: var(--card);
+  color: var(--blue);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.order {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  margin: 0 0 10px;
+}
+
+.order summary {
+  cursor: pointer;
+  padding: 12px 14px;
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr 0.6fr;
+  gap: 8px;
+}
+
+.order .id { font-variant-numeric: tabular-nums; }
+
+.muted { color: var(--muted); }
+
+.body { padding: 0 14px 14px; }
+
+table { width: 100%; border-collapse: collapse; }
+
+th, td {
+  text-align: left;
+  padding: 6px 8px 6px 0;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: var(--paper);
+  border-radius: 8px;
+  padding: 10px;
+  max-height: 360px;
+  overflow: auto;
+  font-size: 12px;
+}
+
+#more { display: block; margin: 12px auto 32px; }
+
+@media (max-width: 720px) {
+  header { flex-direction: column; align-items: start; }
+  .order summary { grid-template-columns: 1fr; }
+}

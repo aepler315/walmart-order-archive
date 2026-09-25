@@ -1,0 +1,9 @@
+{
+  "name": "walmart-order-history",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Chrome extension that archives the signed-in Walmart or Temu account's order history.",
+  "scripts": {
+    "test": "node --test test/protocol.test.mjs test/temu.test.mjs"
+  }
+}

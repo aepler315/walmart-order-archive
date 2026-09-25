@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Order History</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="mode" role="group" aria-label="Store">
+    <button id="mode-walmart" type="button" aria-pressed="true">Walmart</button>
+    <button id="mode-temu" type="button" aria-pressed="false">Temu</button>
+  </div>
+  <header>
+    <h1 id="title">Order History</h1>
+    <p id="blurb">Builds a local archive of the signed-in account. Nothing is uploaded.</p>
+  </header>
+  <p id="status" class="status">Checking this tab…</p>
+  <p id="counts" class="counts"></p>
+  <label class="check"><input id="details" type="checkbox" checked> Full order details</label>
+  <label class="check"><input id="ledger" type="checkbox" checked> <span id="ledger-label">Payment ledger</span> <span class="hint" id="ledger-hint">(slower, actual charges)</span></label>
+  <label class="check" id="returns-row" hidden><input id="returns" type="checkbox" checked> Include returns</label>
+  <div class="actions">
+    <button id="open" type="button">Open Walmart orders</button>
+    <button id="open-temu" type="button">Open Temu orders</button>
+    <button id="collect" type="button">Collect entire history</button>
+    <button id="resume" type="button" hidden>Continue archive</button>
+    <button id="restart" type="button" hidden>Start over</button>
+    <button id="stop" type="button" hidden>Stop</button>
+  </div>
+  <div class="actions secondary">
+    <button id="json" type="button">Download JSON</button>
+    <button id="csv" type="button">Download CSV</button>
+    <button id="archive" type="button">Open archive</button>
+    <button id="clear" type="button">Clear archive</button>
+  </div>
+  <script src="lib/protocol.js"></script>
+  <script src="lib/db.js"></script>
+  <script src="lib/temu.js"></script>
+  <script src="lib/temu-db.js"></script>
+  <script src="lib/download.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

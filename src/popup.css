@@ -1,0 +1,80 @@
+:root {
+  color-scheme: light;
+  --ink: #1c1915;
+  --muted: #5e584f;
+  --line: #e4dccf;
+  --paper: #f7f3eb;
+  --card: #fffdf8;
+  --blue: #0f3d75;
+  --blue-2: #1d5aa8;
+  --warn: #8a3b12;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  width: 360px;
+  padding: 14px 14px 16px;
+  background: var(--paper);
+  color: var(--ink);
+  font: 13px/1.4 "Segoe UI", sans-serif;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}
+
+header p, .hint { color: var(--muted); }
+
+header p { margin: 0 0 10px; }
+
+.status {
+  margin: 0 0 8px;
+  padding: 8px 10px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  min-height: 36px;
+}
+
+.status.error { color: var(--warn); }
+
+.counts { margin: 0 0 8px; color: var(--muted); }
+
+.check {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  margin: 0 0 6px;
+}
+
+.mode { display: flex; gap: 6px; margin: 0 0 10px; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+
+button {
+  border: 1px solid var(--blue);
+  background: var(--blue);
+  color: white;
+  border-radius: 8px;
+  padding: 7px 10px;
+  font: inherit;
+  cursor: pointer;
+}
+
+button.secondary, .secondary button, #open, #open-temu, #stop, #restart, #clear, #json, #csv, #archive {
+  background: var(--card);
+  color: var(--blue);
+}
+
+#collect, #resume { background: var(--blue); color: white; }
+
+.mode button { flex: 1; background: var(--card); color: var(--blue); }
+.mode button[aria-pressed="true"] { background: var(--blue); color: white; }
+
+button:disabled { opacity: 0.45; cursor: default; }
+
+.secondary { margin-top: 8px; }

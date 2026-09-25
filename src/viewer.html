@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Walmart order archive</title>
+  <link rel="stylesheet" href="viewer.css">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Walmart order archive</h1>
+      <p id="summary">Loading the local archive…</p>
+    </div>
+    <div class="actions">
+      <button id="json" type="button">Download JSON</button>
+      <button id="csv" type="button">Download CSV</button>
+    </div>
+  </header>
+  <div class="toolbar">
+    <input id="search" type="search" placeholder="Search orders, items, stores, payments" autocomplete="off">
+  </div>
+  <div id="list"></div>
+  <button id="more" type="button" hidden>Show more</button>
+  <script src="lib/protocol.js"></script>
+  <script src="lib/db.js"></script>
+  <script src="lib/temu.js"></script>
+  <script src="lib/temu-db.js"></script>
+  <script src="lib/download.js"></script>
+  <script src="viewer.js"></script>
+</body>
+</html>
